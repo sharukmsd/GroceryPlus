@@ -23,9 +23,26 @@ struct GroceryListView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "bell")
-                        .imageScale(.large)
-                        .font(.headline)
+                    Button {
+                        // open cart
+                    } label: {
+                        Image(systemName: "cart")
+                            .imageScale(.large)
+                            .font(.headline)
+                            .overlay(alignment: .topTrailing) {
+                                let isCartEmpty = viewModel.cartItemsCount < 1
+                                Text(isCartEmpty ? "" :"\(viewModel.cartItemsCount)")
+                                    .font(.gp(.bodySmall))
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal, 4)
+                                    .padding(.vertical, 4)
+                                    .background(
+                                        Circle().fill(isCartEmpty ? Color.clear : Color.gpPrimary)
+                                    )
+                                    .offset(x: 8, y: -8)
+                            }
+                    }
+                    
                 }
                 .foregroundStyle(.gpText)
                 .padding(.horizontal)
@@ -121,12 +138,12 @@ struct GroceryListView: View {
                                     viewModel.openDetails(for: item)
                                 }
                             } label: {
-                                ItemCellView(
+                                ItemCollectionCellView(
                                     item: item,
                                     namespace: namespace,
                                     width: cellWidth
                                 ) {
-                                    
+                                    viewModel.addToCart(item: item)
                                 }
                                 .frame(width: cellWidth)
                             }

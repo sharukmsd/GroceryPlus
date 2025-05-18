@@ -20,17 +20,19 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            GroceryListView(viewModel: viewModel, namespace: namespace)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .backgroundView()
-                .onViewDidLoad {
-                    viewModel.onViewDidLoad(proxy)
+            ZStack {
+                GroceryListView(viewModel: viewModel, namespace: namespace)
+                
+                if viewModel.showDetails {
+                    GroceryDetailsView(viewModel: viewModel, namespace: namespace)
+                        .zIndex(1)
                 }
-                .overlay {
-                    if viewModel.showDetails {
-                        GroceryDetailsView(viewModel: viewModel, namespace: namespace)
-                    }
-                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .backgroundView()
+            .onViewDidLoad {
+                viewModel.onViewDidLoad(proxy)
+            }
         }
     }
 }

@@ -34,6 +34,11 @@ class ContentViewModel: ObservableObject {
         }
     }
     
+    @Published var cartItems: [ItemModel] = []
+    var cartItemsCount: Int {
+        cartItems.count
+    }
+    
     init() {}
     
     func onViewDidLoad(_ proxy: GeometryProxy) {
@@ -48,5 +53,12 @@ class ContentViewModel: ObservableObject {
     func closeDetails() {
         showDetails = false
         selectedItem = nil
+    }
+
+    func addToCart(item: ItemModel) {
+        cartItems.append(item)
+    }
+    func removeFromCart(item: ItemModel) {
+        cartItems.removeAll { $0.id == item.id }
     }
 }

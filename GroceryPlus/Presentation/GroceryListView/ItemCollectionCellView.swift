@@ -8,7 +8,7 @@
 import SwiftUI
 import asyncImage
 
-struct ItemCellView: View {
+struct ItemCollectionCellView: View {
     
     let item: ItemModel
     let namespace: Namespace.ID
