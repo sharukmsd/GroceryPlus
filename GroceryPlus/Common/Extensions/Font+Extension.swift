@@ -58,10 +58,10 @@ enum FontStyle {
 }
 
 extension Font {
-    func gp(_ style: FontStyle) -> Font {
-        .custom(style.fontName.rawValue, size: style.size)
+    static func gp(_ style: FontStyle) -> Font {
+        return Font.custom(style.fontName.rawValue, size: style.size)
     }
-    func gp(_ name: FontName, size: CGFloat) -> Font {
-        .custom(name.rawValue, size: size)
+    static func gp(name: FontName, size: CGFloat) -> Font {
+        return Font.custom(name.rawValue, size: size)
     }
 }

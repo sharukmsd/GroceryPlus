@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A07A13412DD9F4690084E6D0 /* asyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = A07A13402DD9F4690084E6D0 /* asyncImage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A05F4F8C2D72C7EB00884252 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A07A13412DD9F4690084E6D0 /* asyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = GroceryPlus;
 			packageProductDependencies = (
+				A07A13402DD9F4690084E6D0 /* asyncImage */,
 			);
 			productName = GroceryPlus;
 			productReference = A05F4F7B2D72C7E000884252 /* GroceryPlus.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = A05F4F722D72C7E000884252;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A07A133F2DD9F4690084E6D0 /* XCRemoteSwiftPackageReference "asyncImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A05F4F7C2D72C7E000884252 /* Products */;
 			projectDirPath = "";
@@ -558,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A07A133F2DD9F4690084E6D0 /* XCRemoteSwiftPackageReference "asyncImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/baskurthalit/asyncImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A07A13402DD9F4690084E6D0 /* asyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A07A133F2DD9F4690084E6D0 /* XCRemoteSwiftPackageReference "asyncImage" */;
+			productName = asyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A05F4F732D72C7E000884252 /* Project object */;
 }
